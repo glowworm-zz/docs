@@ -1,6 +1,6 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "API Документация",
+  "$schema": "https://kvant.app/schema.json",
+  "name": "API Документация Квант",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
