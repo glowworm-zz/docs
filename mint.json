@@ -2,8 +2,8 @@
   "$schema": "https://kvant.app/schema.json",
   "name": "API Документация",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/kvant.png",
+    "light": "/logo/kvant.png"
   },
   "favicon": "/kvant.svg",
   "colors": {
@@ -27,7 +27,7 @@
   },
   "anchors": [
     {
-      "name": "Комьюнити",
+      "name": "Телеграм",
       "icon": "telegram",
       "url": "https://t.me/quantteam"
     },
