@@ -1,11 +1,11 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "API Документация",
+  "$schema": "https://kvant.app/schema.json",
+  "name": "API Документация Квант",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "kvant.svg",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -18,28 +18,28 @@
   "topbarLinks": [
     {
       "name": "Помощь",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:support@kvant.app"
     }
   ],
   "topbarCtaButton": {
     "name": "Запросить API ключ",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://kvant.app/dashboard"
   },
   "anchors": [
     {
-      "name": "Documentation",
+      "name": "Документация",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "url": "https://kvant.app/docs"
     },
     {
-      "name": "Community",
+      "name": "Сообщество",
       "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "url": "https://kvant.app/community"
     },
     {
-      "name": "Blog",
+      "name": "Блог",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://kvant.app/blog"
     }
   ],
   "navigation": [
@@ -48,27 +48,21 @@
       "pages": ["introduction", "quickstart", "development"]
     },
     {
-      "group": "Разное",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
-    {
-      "group": "Введение",
-      "pages": ["api-reference/introduction"]
-    },
-    {
-      "group": "Документы",
+      "group": "API",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/delete",
-        "api-reference/endpoint/get"
+        "api-reference/get-tasks",
+        "api-reference/post-tasks",
+        "api-reference/get-task-detail",
+        "api-reference/delete-task",
+        "api-reference/get-metrics",
+        "api-reference/post-metrics"
       ]
     }
   ],
   "footerSocials": {
     "telegram": "https://t.me/quantteam",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "github": "https://github.com/kvant",
+    "linkedin": "https://www.linkedin.com/company/kvant"
   }
 }
+
