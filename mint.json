@@ -17,12 +17,12 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
+      "name": "Помощь",
       "url": "mailto:hi@mintlify.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
+    "name": "Запросить API ключ",
     "url": "https://dashboard.mintlify.com"
   },
   "anchors": [
