@@ -40,7 +40,7 @@
   "navigation": [
     {
       "group": "Введение в API Квант",
-      "pages": ["essentials", "quickstart", "development"]
+      "pages": ["introduction", "quickstart", "development"]
     },
         {
       "group": "Введение",
