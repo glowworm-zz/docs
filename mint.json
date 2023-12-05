@@ -27,9 +27,9 @@
   },
   "anchors": [
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Комьюнити",
+      "icon": "telegram",
+      "url": "https://t.me/quantteam"
     },
     {
       "name": "Blog",
