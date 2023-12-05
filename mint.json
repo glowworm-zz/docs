@@ -5,7 +5,7 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/kvant.svg",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -18,12 +18,12 @@
   "topbarLinks": [
     {
       "name": "Помощь",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:support@kvant.app"
     }
   ],
   "topbarCtaButton": {
     "name": "Запросить API ключ",
-    "url": "https://dashboard.mintlify.com"
+    "url": "mailto:support@kvant.app"
   },
   "anchors": [
     {
