@@ -33,14 +33,14 @@
     },
     {
       "name": "Сайт",
-      "icon": "earth",
+      "icon": "website",
       "url": "https://kvant.app/"
     }
   ],
   "navigation": [
     {
       "group": "Введение в API Квант",
-      "pages": ["Введение", "Начало работы", "Разработка"]
+      "pages": ["Essentials", "Quickstart", "Development"]
     },
     {
       "group": "Разное",
