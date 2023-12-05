@@ -19,14 +19,14 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/kvants": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "Получаем кванты",
         "parameters": [
           {
             "name": "limit",
             "in": "query",
-            "description": "The maximum number of results to return",
+            "description": "Макс кол-во, которое вернётся",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -35,13 +35,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "Kvant ответ",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Kvant"
                   }
                 }
               }
