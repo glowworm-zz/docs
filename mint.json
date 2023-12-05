@@ -48,11 +48,11 @@
       "pages": ["introduction", "quickstart", "development"]
     },
     {
-      "group": "Essentials",
+      "group": "Разное",
       "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
     },
     {
-      "group": "API Documentation",
+      "group": "Введение",
       "pages": ["api-reference/introduction"]
     },
     {
