@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI Plant Store",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "title": "OpenAPI Квант",
+    "description": "Документация API Квант для взаимодействия с системой управления задачами и метриками.",
     "license": {
       "name": "MIT"
     },
@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://kvant.app/api"
     }
   ],
   "security": [
@@ -19,40 +19,19 @@
     }
   ],
   "paths": {
-    "/kvants": {
+    "/tasks/": {
       "get": {
-        "description": "Получаем кванты",
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Макс кол-во, которое вернётся",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
+        "description": "Получение списка коммуникаций",
         "responses": {
           "200": {
-            "description": "Kvant ответ",
+            "description": "Успешный ответ со списком коммуникаций",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Task"
                   }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -60,13 +39,13 @@
         }
       },
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "Создание новой коммуникации",
         "requestBody": {
-          "description": "Plant to add to the store",
+          "description": "Данные для новой коммуникации",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+                "$ref": "#/components/schemas/NewTask"
               }
             }
           },
@@ -74,21 +53,11 @@
         },
         "responses": {
           "200": {
-            "description": "plant response",
+            "description": "Успешное создание коммуникации",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Plant"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/Task"
                 }
               }
             }
@@ -96,32 +65,94 @@
         }
       }
     },
-    "/plants/{id}": {
-      "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
+    "/tasks/{id}": {
+      "get": {
+        "description": "Получение информации о коммуникации",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "ID of plant to delete",
+            "description": "ID коммуникации для получения информации",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Информация о коммуникации",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Удаление коммуникации",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID коммуникации для удаления",
+            "required": true,
+            "schema": {
+              "type": "integer"
             }
           }
         ],
         "responses": {
           "204": {
-            "description": "Plant deleted",
-            "content": {}
-          },
-          "400": {
-            "description": "unexpected error",
+            "description": "Коммуникация удалена"
+          }
+        }
+      }
+    },
+    "/metrics/": {
+      "get": {
+        "description": "Получение списка показателей",
+        "responses": {
+          "200": {
+            "description": "Список показателей",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Metric"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metrics/{id}": {
+      "post": {
+        "description": "Обновление данных показателя",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID показателя для обновления",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Данные показателя обновлены",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Metric"
                 }
               }
             }
@@ -132,64 +163,5 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "description": "The name of the plant",
-            "type": "string"
-          },
-          "tag": {
-            "description": "Tag to specify the type",
-            "type": "string"
-          }
-        }
-      },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
-      },
-      "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
-      }
-    }
-  }
-}
+      "Task": {
+        "type": "
