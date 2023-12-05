@@ -33,13 +33,13 @@
     },
     {
       "name": "Сайт",
-      "icon": "website",
+      "icon": "world",
       "url": "https://kvant.app/"
     }
   ],
   "navigation": [
     {
-      "group": "Введение",
+      "group": "Начало работы",
       "pages": ["api-reference/introduction"]
     },
     {
