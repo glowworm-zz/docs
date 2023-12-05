@@ -39,12 +39,12 @@
   ],
   "navigation": [
     {
-      "group": "Введение в API Квант",
-      "pages": ["introduction", "quickstart", "development"]
-    },
-        {
       "group": "Введение",
       "pages": ["api-reference/introduction"]
+    },
+    {
+      "group": "Введение в API Квант",
+      "pages": ["introduction", "quickstart", "development"]
     },
     {
       "group": "Разное",
