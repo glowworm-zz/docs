@@ -32,15 +32,15 @@
       "url": "https://t.me/quantteam"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Сайт",
+      "icon": "website",
+      "url": "https://kvant.app/"
     }
   ],
   "navigation": [
     {
       "group": "Введение в API Квант",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": ["Введение", "Начало работы", "Разработка"]
     },
     {
       "group": "Разное",
