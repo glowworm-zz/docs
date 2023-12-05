@@ -70,7 +70,7 @@
       "pages": ["api-reference/introduction"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Документы",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -79,7 +79,7 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
+    "twitter": "https://t.me/quantteam",
     "github": "https://github.com/mintlify",
     "linkedin": "https://www.linkedin.com/company/mintsearch"
   }
