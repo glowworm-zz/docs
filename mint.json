@@ -58,12 +58,12 @@
     {
       "group": "Документы",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/post",
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/delete",
-        "api-reference/endpoint/post",
-        "api-reference/endpoint/get"
+        "api-reference/endpoint/get-tasks",
+        "api-reference/endpoint/post-tasks",
+        "api-reference/endpoint/get-task-detail",
+        "api-reference/endpoint/delete-task",
+        "api-reference/endpoint/get-metrics",
+        "api-reference/endpoint/post-metrics"
       ]
     }
   ],
