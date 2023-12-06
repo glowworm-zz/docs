@@ -21,18 +21,19 @@ openapi: 'GET /api/tasks/'
 ```json
 HTTP/1.1 200 OK
 Content-Type: application/json
-
+{
 [
   {
-    "id": "идентификатор задачи",
-    "name": "Название задачи",
-    "type": "тип задачи",
-    "status": "статус задачи",
-    "description": "Описание задачи",
+    "id": number, // ID задачи
+    "name": string, // Название задачи
+    "type": "task" | "request"| "decition"| "meeting", // Тип задачи
+    "status": "task" | "request"| "decition"| "meeting", // Статус задачи
+    "description": string, // Описание задачи
     "to_user_id": "идентификатор исполнителя",
     "created_at": "дата и время создания задачи в формате ISO 8601"
   }
-]
+  ]
+  }
 ```
 
 ### Ошибка
