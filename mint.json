@@ -2,8 +2,8 @@
   "$schema": "https://kvant.app/schema.json",
   "name": "API Документация",
   "logo": {
-    "dark": "/logo/kvant.png",
-    "light": "/logo/kvant.png"
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
   },
   "favicon": "/kvant.svg",
   "colors": {
