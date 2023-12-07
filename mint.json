@@ -18,12 +18,12 @@
   "topbarLinks": [
     {
       "name": "Помощь",
-      "url": "mailto:support@kvant.app"
+      "url": "p@rsuquant.ru"
     }
   ],
   "topbarCtaButton": {
     "name": "Запросить API ключ",
-    "url": "mailto:support@kvant.app"
+    "url": "p@rsuquant.ru"
   },
   "topAnchor": {
     "name": "Документация"
