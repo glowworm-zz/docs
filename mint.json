@@ -15,14 +15,8 @@
       "to": "#07C983"
     }
   },
-"topbarLinks": [
-  {
-    "name": "Запросить ключ API: p@rsuquant.ru",
-    "url": "mailto:p@rsuquant.ru"
-  }
-],
 "topbarCtaButton": {
-  "name": "Запросить API ключ",
+  "name": "Помощь",
   "url": "mailto:p@rsuquant.ru"
 },
   "topAnchor": {
