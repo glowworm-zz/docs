@@ -10,10 +10,22 @@ openapi: 'GET /api/tasks/'
 
 Этот метод поддерживает следующие параметры запроса для фильтрации списка коммуникаций:
 
-- `type` (string, optional) - Фильтр по типу задачи.
-- `status` (string, optional) - Фильтр по статусу задачи.
+- `type` (string, optional) - Фильтр по типу задачи.  
+  Допустимые значения: `task` (задача), `request` (обращение), `decision` (решение), `meeting` (встреча).
+- `status` (string, optional) - Фильтр по статусу задачи.  
+  Допустимые значения: `incoming` (входящие), `accepted` (принятые), `in_progress` (в работе), `completed` (выполненные), `planned` (запланированные).
 - `to_user_id` (string, optional) - Фильтр по идентификатору исполнителя.
+- `total_count` (number) - Общее количество задач в списке, возвращаемое запросом.
 
+### Тело запроса
+```json
+GET /api/tasks
+{
+  "type"?: "task" | "request" | "decision" | "meeting",
+  "status"?: "incoming" | "accepted" | "in_progress" | "completed" | "planned",
+  "to_user_id"?: string
+}
+```
 
 ### Успешный ответ
 Сервер вернет массив объектов, каждый из которых представляет задачу.
@@ -21,19 +33,30 @@ openapi: 'GET /api/tasks/'
 ```json
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
-[
-  {
-    "id": number, // ID задачи
-    "name": string, // Название задачи
-    "type": "task" | "request"| "decition"| "meeting", // Тип задачи
-    "status": "task" | "request"| "decition"| "meeting", // Статус задачи
-    "description": string, // Описание задачи
-    "to_user_id": "идентификатор исполнителя",
-    "created_at": "дата и время создания задачи в формате ISO 8601"
-  }
-  ]
-  }
+  "tasks": [
+    {
+      "id": 12345,
+      "name": "Изучить API Квант",
+      "type": "task",
+      "status": "in_progress",
+      "description": "Подробное изучение документации API",
+      "to_user_id": "67890",
+      "created_at": "2023-12-06T14:00:00Z"
+    },
+    {
+      "id": 12346,
+      "name": "Подготовить отчет",
+      "type": "task",
+      "status": "planned",
+      "description": "Подготовка ежемесячного отчета по проекту",
+      "to_user_id": "67891",
+      "created_at": "2023-12-07T10:00:00Z"
+    }
+  ],
+  "total_count": 2
+}
 ```
 
 ### Ошибка
