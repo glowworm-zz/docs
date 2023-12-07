@@ -13,8 +13,8 @@ openapi: 'GET /api/tasks/'
 - `type` (string, optional) - Фильтр по типу задачи.  
   Допустимые значения: `task` (задача), `request` (обращение), `decision` (решение), `meeting` (встреча).
 - `status` (string, optional) - Фильтр по статусу задачи.  
-  Допустимые значения: `incoming` (входящие), `accepted` (принятые), `in_progress` (в работе), `completed` (выполненные), `planned` (запланированные).
-- `to_user_id` (number, optional) - Фильтр по идентификатору исполнителя.
+  Допустимые значения: `incoming` (входящие), `accepted` (принятые), `in_progress` (в работе), `completed` (выполненные), `planned` (запланированные), `___` (на утверждении).
+- `performer` (number, optional) - Фильтр по исполнителю.
 - `total_count` (number) - Общее количество задач в списке, возвращаемое запросом.
 
 ```json
