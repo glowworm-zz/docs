@@ -25,6 +25,9 @@
     "name": "Запросить API ключ",
     "url": "mailto:support@kvant.app"
   },
+  "topAnchor": {
+    "name": "Документация"
+  },
   "anchors": [
     {
       "name": "Телеграм",
