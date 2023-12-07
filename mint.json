@@ -44,7 +44,10 @@
     {
       "group": "Начало работы",
       "pages": ["api-reference/introduction"]
-    },
+    }
+  ],
+  
+<!--
     {
       "group": "Введение в API Квант",
       "pages": ["introduction", "quickstart", "development"]
@@ -64,7 +67,8 @@
         "api-reference/endpoint/post-metrics"
       ]
     }
-  ],
+  -->
+
   "footerSocials": {
     "telegram": "https://t.me/quantteam",
     "website": "https://kvant.app/"
