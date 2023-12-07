@@ -18,11 +18,11 @@ openapi: 'GET /api/tasks/'
 - `total_count` (number) - Общее количество задач в списке, возвращаемое запросом.
 
 ```json
-GET /api/tasks
+GET /api/metrics
 {
-  "type"?: "task" | "request" | "decision" | "meeting",
-  "status"?: "incoming" | "accepted" | "in_progress" | "completed" | "planned",
-  "to_user_id"?: string
+  "start_date"?: "yyyy-MM-dd",
+  "end_date"?: "yyyy-MM-dd",
+  "function_id"?: number
 }
 ```
 ### Пример запроса

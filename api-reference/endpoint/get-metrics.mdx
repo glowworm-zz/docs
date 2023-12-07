@@ -8,16 +8,10 @@ openapi: 'GET /api/metrics/'
 
 Этот метод поддерживает следующие параметры запроса для фильтрации списка коммуникаций:
 
-- `type` (string, optional) - Фильтр по типу задачи.  
-  Допустимые значения: `task` (задача), `request` (обращение), `decision` (решение), `meeting` (встреча).
-- `status` (string, optional) - Фильтр по статусу задачи.  
-  Допустимые значения: `incoming` (входящие), `accepted` (принятые), `in_progress` (в работе), `completed` (выполненные), `planned` (запланированные).
-- `to_user_id` (string, optional) - Фильтр по идентификатору исполнителя.
-- `total_count` (number) - Общее количество показателей в списке, возвращаемое запросом.
-
-date_from (date, optional) - Начальная дата промежутка.
-date_to (date, optional) - Конечная дата промежутка.
-function_id (integer, optional) - Идентификатор функции пользователя для фильтрации показателей.
+- `date_from` (date, optional) - Начальная дата промежутка.
+- `date_to` (date, optional) - Конечная дата промежутка.
+- `function_id` (number, optional) - Идентификатор функции пользователя для фильтрации показателей.
+- `total_count` (number, required) - Общее количество показателей в списке, возвращаемое запросом.
 
 ```json
 GET /api/tasks
@@ -29,7 +23,7 @@ GET /api/tasks
 ```
 ### Пример запроса
 ```json
-GET /api/tasks?type=task&status=incoming&to_user_id=123
+GET /api/metrics?date_from=2023-01-01&date_to=2023-01-31&function_id=3
 ```
 
 ### Успешный ответ
