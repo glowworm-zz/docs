@@ -46,28 +46,6 @@
       "pages": ["api-reference/introduction"]
     }
   ],
-  
-<!--
-    {
-      "group": "Введение в API Квант",
-      "pages": ["introduction", "quickstart", "development"]
-    },
-    {
-      "group": "Разное",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
-    {
-      "group": "Документы",
-      "pages": [
-        "api-reference/endpoint/get-tasks",
-        "api-reference/endpoint/post-tasks",
-        "api-reference/endpoint/get-task-detail",
-        "api-reference/endpoint/delete-task",
-        "api-reference/endpoint/get-metrics",
-        "api-reference/endpoint/post-metrics"
-      ]
-    }
-  -->
 
   "footerSocials": {
     "telegram": "https://t.me/quantteam",
