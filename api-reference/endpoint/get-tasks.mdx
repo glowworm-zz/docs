@@ -77,33 +77,24 @@ GET /api/tasks?type=task&status=incoming&to_user_id=123
   "message": "Необходима аутентификация"
 }
 ```
-- О400 (Bad Request):
+- 403 (Forbidden):
 ```json
-HTTP/1.1 400 Bad Request
-Content-Type: application/json
-
 {
-  "error": "Ошибка в запросе",
-  "message": "Неверные параметры запроса"
+  "error": "Доступ запрещен",
+  "message": "У вас нет доступа к этой задаче"
 }
 ```
-- 400 (Bad Request):
+- 404 (Not Found):
 ```json
-HTTP/1.1 400 Bad Request
-Content-Type: application/json
-
 {
-  "error": "Ошибка в запросе",
-  "message": "Неверные параметры запроса"
+  "error": "Задача не найдена",
+  "message": "Задача с указанным ID не существует"
 }
 ```
-- Ошибка 400 (Bad Request):
+- Ошибка 429 (Too Many Requests):
 ```json
-HTTP/1.1 400 Bad Request
-Content-Type: application/json
-
 {
-  "error": "Ошибка в запросе",
-  "message": "Неверные параметры запроса"
+  "error": "Слишком много запросов",
+  "message": "Превышен лимит запросов"
 }
 ```
