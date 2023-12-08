@@ -17,16 +17,16 @@ openapi: 'GET /api/tasks/'
 - `performer` (number, optional) - Фильтр по исполнителю.
 - `total_count` (number) - Общее количество задач в списке, возвращаемое запросом.
 
-```json
-GET /api/tasks
-{
-  "type"?: "task" | "request" | "decision" | "meeting",
-  "status"?: "incoming" | "accepted" | "in_progress" | "completed" | "planned" | "on_approval",
-  "performer"?: number
+```typescript
+// GET /api/tasks
+interface Request { 
+  type?: "task" | "request" | "decision" | "meeting"
+  status?: "incoming" | "accepted" | "in_progress" | "completed" | "planned" | "on_approval"
+  performer?: number
 }
 ```
 ### Пример запроса
-```json
+```
 GET /api/tasks?type=task&status=incoming&performer=123
 ```
 
