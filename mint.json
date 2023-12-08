@@ -17,7 +17,7 @@
   },
 "topbarCtaButton": {
   "name": "Помощь",
-  "url": "mailto:p@rsuquant.ru"
+  "url": "https://kvant.mintlify.app/api-reference/contacts"
 },
   "topAnchor": {
     "name": "Документация"
