@@ -25,10 +25,20 @@ interface Request {
   performer?: number
 }
 ```
+
 ### Пример запроса
-```
+
+<CodeGroup>
+
+```md Request
 GET /api/tasks?type=task&status=incoming&performer=123
 ```
+
+```bash cURL
+curl -X GET "https://kvant.app/api/tasks?status=in_progress&type=task&performer=123"
+```
+
+</CodeGroup>
 
 ### Успешный ответ
 Сервер вернет массив объектов, каждый из которых представляет задачу.
