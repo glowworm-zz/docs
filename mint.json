@@ -37,8 +37,10 @@
   "navigation": [
     {
       "group": "Начало работы",
-      "pages": ["api-reference/introduction"],
-      "pages": ["api-reference/contacts"]
+      "pages": [
+        "api-reference/introduction", 
+        "api-reference/contacts"
+        ]
     },
     {
       "group": "Документы",
