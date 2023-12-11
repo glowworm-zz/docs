@@ -11,9 +11,17 @@ openapi: 'GET /api/tasks/{id}'
 - `id` (number, required) - уникальный идентификатор задачи.
 
 ### Пример запроса
-```json
+<CodeGroup>
+
+```md Request
 GET /api/tasks/12345
 ```
+
+```bash cURL
+curl -X GET "https://kvant.app/api/tasks/12345"
+```
+
+</CodeGroup>
 
 ### Успешный ответ
 При успешном запросе сервер вернет объект, содержащий информацию о задаче.
