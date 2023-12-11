@@ -23,12 +23,25 @@ interface Request {
 ```
 
 ### Пример запроса
-```json
+<CodeGroup>
+
+```md Request
 {
   "name": "Продажи за месяц",
   "value": 150
 }
 ```
+
+```bash cURL
+curl -X POST "https://kvant.app/api/metrics" \
+     -H "Content-Type: application/json" \
+     -d '{
+          "name": "Продажи за месяц",
+          "value": 150
+         }'
+```
+
+</CodeGroup>
 
 ### Успешный ответ
 При успешном обновлении показателя возвращается объект с информацией о показателе.
