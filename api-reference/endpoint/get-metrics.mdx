@@ -8,8 +8,8 @@ openapi: 'GET /api/metrics/'
 
 Этот метод поддерживает следующие параметры запроса для фильтрации списка коммуникаций:
 
-- `date_from` (date, optional) - Начальная дата промежутка.
-- `date_to` (date, optional) - Конечная дата промежутка.
+- `start_date` (date, optional) - Начальная дата промежутка.
+- `end_date` (date, optional) - Конечная дата промежутка.
 - `function_id` (number, optional) - Идентификатор функции пользователя для фильтрации показателей.
 - `total_count` (number, required) - Общее количество показателей в списке, возвращаемое запросом.
 
@@ -23,9 +23,18 @@ interface Request {
 ```
 
 ### Пример запроса
-```json
-GET /api/metrics?date_from=2023-01-01&date_to=2023-01-31&function_id=3
+
+<CodeGroup>
+
+```md Request
+GET /api/metrics?start_date=2023-01-01&end_date=2023-01-31&function_id=3
 ```
+
+```bash cURL
+curl -X GET "https://kvant.app/api/metrics?start_date=2023-01-01&end_date=2023-01-31&function_id=3"
+```
+
+</CodeGroup>
 
 ### Успешный ответ
 При успешном получении списка показателей сервер вернет HTTP статус 200 и список показателей в формате JSON.
