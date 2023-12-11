@@ -8,17 +8,21 @@ openapi: 'POST /api/metrics/{id}'
 
 Для получения информации о задаче, необходимо указать идентификатор показателя в пути запроса:
 
-- `id` (number, required) - уникальный идентификатор показателя.
+- `id` (number, required) - Уникальный идентификатор показателя.
+- `metric_id` (number, required) - Уникальный идентификатор метрики внутри показателя.
 - `name` (string, optional) - Новое название показателя.
 - `description` (string, optional) - Новое описание показателя.
 - `value` (number, required) - Обновленное значение показателя.
+- `date` (date, required) - Дата, за которую вносится обновление значения.
 
 ```typescript
 // POST /api/metrics/{id}
 interface Request { 
+  metric_id: number,
   name?: string,
   description?: string,
-  value: number
+  value: number,
+  date: "yyyy-MM-dd"
 }
 ```
 
@@ -27,17 +31,21 @@ interface Request {
 
 ```md Request
 {
+  "metric_id": 1,
   "name": "Продажи за месяц",
-  "value": 150
+  "value": 150,
+  "date": "2024-01-01"
 }
 ```
 
 ```bash cURL
-curl -X POST "https://kvant.app/api/metrics" \
+curl -X POST "https://kvant.app/api/metrics/123" \
      -H "Content-Type: application/json" \
      -d '{
+          "metric_id": 1,
           "name": "Продажи за месяц",
-          "value": 150
+          "value": 150,
+          "date": "2024-01-01"
          }'
 ```
 
@@ -47,12 +55,17 @@ curl -X POST "https://kvant.app/api/metrics" \
 При успешном обновлении показателя возвращается объект с информацией о показателе.
 
 ```json
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
   "id": 123,
+  "metric_id": 1,
   "name": "Продажи за месяц",
   "description": "Общий объем продаж за месяц",
   "value": 150,
-  "updated_at": "2024-12-05T12:00:00Z"
+  "date": "2024-01-01",
+  "updated_at": "2024-01-02T12:00:00Z"
 }
 ```
 ### Описание элементов ответа
