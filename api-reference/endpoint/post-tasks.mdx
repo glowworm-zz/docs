@@ -18,16 +18,13 @@ openapi: 'POST /api/tasks/'
 - `description` (string, optional) - Описание задачи.
 - `performer` (number, required) - Идентификатор пользователя, назначенного исполнителем.
 
-### Тело запроса
-
-Тело запроса должно быть в формате `application/json` и содержать следующие поля:
-
-```json
-{
-  "name": "string",
-  "type"?: "string",
-  "description"?: "string",
-  "performer": number
+```typescript
+// POST /api/tasks
+interface Request { 
+  name: "string",
+  type?: "string",
+  description?: "string",
+  performer: number
 }
 ```
 
@@ -40,6 +37,30 @@ openapi: 'POST /api/tasks/'
   "performer": 12345
 }
 ```
+
+<CodeGroup>
+
+```md Request
+{
+  "name": "Разработка API",
+  "type": "task",
+  "description": "Разработать новый API для системы Квант",
+  "performer": 12345
+}
+```
+
+```bash cURL
+curl -X POST "https://kvant.app/api/tasks" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "name": "Разработка API",
+           "type": "task",
+           "description": "Разработать новый API для системы Квант",
+           "performer": 12345
+         }'
+```
+
+</CodeGroup>
 
 ### Успешный ответ
 При успешном создании задачи возвращается объект с информацией о задаче.
