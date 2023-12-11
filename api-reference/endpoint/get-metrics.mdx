@@ -13,14 +13,15 @@ openapi: 'GET /api/metrics/'
 - `function_id` (number, optional) - Идентификатор функции пользователя для фильтрации показателей.
 - `total_count` (number, required) - Общее количество показателей в списке, возвращаемое запросом.
 
-```json
-GET /api/metrics
-{
-  "start_date"?: "yyyy-MM-dd",
-  "end_date"?: "yyyy-MM-dd",
-  "function_id"?: number
+```typescript
+// GET /api/metrics
+interface Request { 
+  start_date?: "yyyy-MM-dd"
+  end_date?: "yyyy-MM-dd"
+  function_id?: number
 }
 ```
+
 ### Пример запроса
 ```json
 GET /api/metrics?date_from=2023-01-01&date_to=2023-01-31&function_id=3

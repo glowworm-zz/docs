@@ -12,11 +12,13 @@ openapi: 'POST /api/metrics/{id}'
 - `name` (string, optional) - Новое название показателя.
 - `description` (string, optional) - Новое описание показателя.
 - `value` (number, required) - Обновленное значение показателя.
-```json
-{
-  "name"?: string,
-  "description"?: string,
-  "value": number
+
+```typescript
+// POST /api/metrics/{id}
+interface Request { 
+  name?: string,
+  description?: string,
+  value: number
 }
 ```
 
