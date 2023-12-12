@@ -1,9 +1,9 @@
 ---
 title: 'Удаление коммуникации'
-openapi: 'DELETE /api.kvant.app/tasks/{id}'
+openapi: 'DELETE /tasks/{id}'
 ---
 
-Метод `DELETE /api.kvant.app/tasks/{id}` позволяет удалить существующую задачу в системе Квант. Необходимо передать в строке запроса идентификатор задачи, которую вы хотите удалить.
+Метод `DELETE /tasks/{id}` позволяет удалить существующую задачу в системе Квант. Необходимо передать в строке запроса идентификатор задачи, которую вы хотите удалить.
 
 Удаление задачи является необратимой операцией, поэтому используйте этот метод с осторожностью.
 
@@ -18,11 +18,11 @@ openapi: 'DELETE /api.kvant.app/tasks/{id}'
 <CodeGroup>
 
 ```md Request
-DELETE /api.kvant.app/tasks/12345
+DELETE /tasks/12345
 ```
 
 ```bash cURL
-curl -X DELETE "https://kvant.app/api/tasks/12345"
+curl -X DELETE "https://api.kvant.app/tasks/12345"
 ```
 
 </CodeGroup>

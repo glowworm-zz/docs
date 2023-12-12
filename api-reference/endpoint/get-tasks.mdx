@@ -1,8 +1,8 @@
 ---
 title: 'Список коммуникаций'
-openapi: 'GET /api.kvant.app/tasks/'
+openapi: 'GET /tasks/'
 ---
-Метод `GET /api.kvant.app/tasks` предоставляет доступ к списку коммуникаций в системе Квант. Этот метод позволяет извлекать данные о всех созданных задачах, с возможностью фильтрации.
+Метод `GET /tasks` предоставляет доступ к списку коммуникаций в системе Квант. Этот метод позволяет извлекать данные о всех созданных задачах, с возможностью фильтрации.
 
 Вы можете фильтровать коммуникации по различным параметрам, включая тип задачи, статус (например, "входящие", "принятые", "в работе", "выполненные", "запланированные", "на утверждении") и назначенному исполнителю.
 
@@ -18,7 +18,7 @@ openapi: 'GET /api.kvant.app/tasks/'
 - `total_count` (number) - Общее количество задач в списке, возвращаемое запросом.
 
 ```typescript
-// GET /api.kvant.app/tasks
+// GET /tasks
 interface Request { 
   type?: "task" | "request" | "decision" | "meeting"
   status?: "incoming" | "accepted" | "in_progress" | "completed" | "planned" | "on_approval"
@@ -31,7 +31,7 @@ interface Request {
 <CodeGroup>
 
 ```md Request
-GET /api/tasks?type=task&status=incoming&performer=123
+GET /tasks?type=task&status=incoming&performer=123
 ```
 
 ```bash cURL
