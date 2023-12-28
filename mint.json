@@ -51,7 +51,8 @@
         "api-reference/endpoint/delete-task",
         "api-reference/endpoint/get-metrics",
         "api-reference/endpoint/post-metrics",
-        "api-reference/endpoint/get-projects"
+        "api-reference/endpoint/get-projects",
+        "api-reference/endpoint/delete-project"
       ]
     }
   ],
