@@ -8,18 +8,16 @@ openapi: 'GET /projects/'
 
 Этот метод поддерживает следующие параметры запроса для фильтрации списка коммуникаций:
 
-- `start_date` (date, optional) - Начальная дата промежутка.
-- `end_date` (date, optional) - Конечная дата промежутка.
-- `function_id` (number, optional) - Идентификатор функции пользователя для фильтрации показателей.
-- `total_count` (number, required) - Общее количество показателей в списке, возвращаемое запросом.
+- `created_after` (date, optional) - Фильтр проектов, созданных после указанной даты.
+- `created_before` (date, optional) - Фильтр проектов, созданных до указанной даты.
+- `total_count` (number, required) - Общее количество проектов в списке, возвращаемое запросом.
 
 
 ```typescript
-// GET /metrics
+// GET /api/projects
 interface Request { 
-  start_date?: "yyyy-MM-dd"
-  end_date?: "yyyy-MM-dd"
-  function_id?: number
+  created_after?: "yyyy-MM-dd",
+  created_before?: "yyyy-MM-dd"
 }
 ```
 
@@ -28,40 +26,37 @@ interface Request {
 <CodeGroup>
 
 ```md Request
-GET /metrics?start_date=2023-01-01&end_date=2023-01-31&function_id=3
+GET /api/projects?created_after=2023-01-01&created_before=2023-12-31
 ```
 
 ```bash cURL
-curl -X GET "https://api.kvant.app/metrics?start_date=2023-01-01&end_date=2023-01-31&function_id=3"
+curl -X GET "https://api.kvant.app/projects?created_after=2023-01-01&created_before=2023-12-31"
 ```
 
 </CodeGroup>
 
 ### Успешный ответ
-При успешном получении списка показателей сервер вернет HTTP статус 200 и список показателей в формате JSON.
+При успешном получении списка проектов сервер вернет HTTP статус 200 и список проектов в формате JSON.
 
 ```json
 HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "total_count": 5,
-  "metrics": [
+  "total_count": 2,
+  "projects": [
     {
       "id": 1,
-      "name": "Продажи",
-      "value": 100,
-      "date": "2024-01-01",
-      "function_id": 3
+      "name": "проект1",
+      "description": "Описание проекта 1",
+      "creator_id": 3,
+      "created_at": "2022-03-25 08:54:37",
+      "tasksCount": 1,
+      "progress": 0,
+      "completed": 0
+      // ... Другие данные проекта
     },
-    {
-      "id": 2,
-      "name": "Клиентская база",
-      "value": 200,
-      "date": "2024-01-01",
-      "function_id": 3
-    }
-    // ... Другие показатели
+    // ... Другие проекты
   ]
 }
 ```
@@ -72,6 +67,16 @@ Content-Type: application/json
 - `name` (string) - Название показателя.
 - `value` (number) - Значение показателя.
 - `date` (string) - Дата, за которую указан показатель, в формате "yyyy-MM-dd".
+
+- projects (array) - Массив объектов, каждый из которых представляет проект.
+- id (number) - Уникальный идентификатор проекта.
+- name (string) - Название проекта.
+- description (string) - Описание проекта.
+- creator_id (number) - Идентификатор пользователя, создавшего проект.
+- created_at (string) - Дата и время создания проекта в формате "yyyy-MM-dd".
+- tasksCount (number) - Количество задач в проекте.
+- progress (number) - Прогресс выполнения проекта.
+- completed (number) - Статус завершения проекта.
 
 ### Ошибка
 Если запрос не может быть обработан из-за неверных данных, возвращается ошибка с соответствующим описанием.
@@ -95,7 +100,7 @@ Content-Type: application/json
 ```json
 {
   "error": "Доступ запрещен",
-  "message": "У вас нет доступа к показателям. Проверьте, что у вашего аккаунта есть соответствующие права доступа."
+  "message": "У вас нет доступа к проектам. Проверьте, что у вашего аккаунта есть соответствующие права доступа."
 }
 ```
 - 404 (Not Found):
