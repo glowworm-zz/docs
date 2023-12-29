@@ -52,7 +52,7 @@ Content-Type: application/json
       "owner_id": 3,
       "created_at": "2024-03-25 08:54:37",
       "tasksCount": 1,
-      "progress": 0 // "on progress" | "completed"
+      "progress": "on progress" // "on progress" | "completed"
       // ... Другие данные проекта
     },
     // ... Другие проекты
@@ -68,7 +68,7 @@ Content-Type: application/json
 - `owner_id` (number) - Идентификатор пользователя, ответственного за проект.
 - `created_at` (string) - Дата и время создания проекта в формате "yyyy-MM-dd".
 - `tasksCount` (number) - Количество задач в проекте.
-- `progress` (number) - Прогресс выполнения проекта. 
+- `progress` (string) - Прогресс выполнения проекта. 
 
 
 ### Ошибка
